@@ -1,3 +1,3 @@
 idea
 a + B == c
-x + y == n
+x + y == k
