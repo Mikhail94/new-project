@@ -1,6 +1,12 @@
-let num = 10;
-const str = 'string';
-var bool = true;
+// let num = 10;
+// const str = 'string';
+// var bool = true;
+
+// let str1 = 'string';                    //// создание и присваивание переменной через литирал 
+// let str2 = String('string')             /// создание и присваивание через объект 
+// const obj = {};                         /// создание и присваивание переменной через литирал 
+// const obj1 = Object.create({});         /// создание и присваивание через объект
+
 
 //var myNumber = new Number (5);
 //var myString = new String ('Helloworld' )     ///[String: 'Helloworld'] выведет в консоли 
@@ -122,24 +128,131 @@ var bool = true;
 // console.log(obj.move());
 
 
+// let a = Symbol ('asd');                 /// Symbol не равен ничему. даже самому себе
+// let b = Symbol ('asd');                 /// Symbol не равен ничему. даже самому себе
+// console.log(a === b);                   /// Symbol не равен ничему. даже самому себе
+// let d = Symbol.for ('asd');                 /// Symbol будет равен через метод Symbol.for
+// let c = Symbol.for ('asd');                 /// Symbol будет равен через метод Symbol.for
+// console.log(d === c);                       /// Symbol будет равен через метод Symbol.for
 
 
+//const array = ['string' , 10 , false , {} , [] , Symbol]              ///Js в массиве могут храниться разные типы данных
+//const array1 = new Array(1 , 2 , true, 'str');                        /// обявление массива ччерез объект 
+//console.log(array1);
+//const array = ['string' , 10 , 'string2' , 'string3'];              /// метод join делает массив в строку
+//console.log(array.join (','));                                      /// метод join делает массив в строку
+
+//const array = [1, 6, 50, 12, 25, 2];                    /// сортировка массива из номеров
+//console.log (array.sort((a,b) => a-b));                 /// сортировка массива из номеров
+//console.log(array.push(60));                            /// выводит количество элементов в массиве. массив изменен добавляется в конце новое значение
+//console.log(array);
+//console.log(array.pop());                                /// удаляет последний элемент и показывает что он удаляет
+//console.log(array);
+//console.log(array.unshift(5));                          /// выводит количество элементов в массиве. массив изменен добавляется в начале новое значение
+//console.log(array);
+//console.log(array.shift(5));                          /// удаляет первый элемент и показывает что он удаляет
+//console.log(array);
 
 
+// function fun (num1, num2) {                          /// объявление функции
+//     return num1 + num2;                             /// объявление функции
+// }                                                   /// объявление функции
+// console.log(fun(10 , 20))
 
 
+//const age = 10;                                      /// использование циклов логических операторов if 
+// if(age >= 18) {
+//     console.log('Ok, you can go!')
+// } else {
+//     console.log('No, go away!')
+// }
+
+// if(age >= 18 && age < 65) {                         /// использование циклов логических операторов else if
+//     console.log('Ok, you can go!')
+// } else if(age >= 65) {
+//     console.log('Greate your enter is free')
+// } else {
+//     console.log('No, go away!')
+// }
 
 
+//const month = 2;                                     /// использование логических операторов switch case что бы не писать много if else if 
+// switch (month) {
+//     case 1:
+//         console.log('January');
+//         break;
+//     case 2:
+//         console.log('February');
+//         break;
+//     case 3:
+//         console.log('March');
+//         break;
+//     default:
+//         console.log('This is not a month')
 
 
+// let num = 0;                                              /// цикл while так работает
+// while(num <= 10) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {                                                     /// цикл do while так работает
+//     console.log(num);
+//     num++;
+// } while(num < 0)
 
 
+// const array = [1, 6, 50, 12, 25, 2];                        /// цикл for так работает
+// for(let i = 0; i < array.length; i++) {
+//      console.log(array[i])
+// }
 
 
+// for(let value of arr1) {                                    /// цикл перебора for of в массиве 
+//     console.log(value);
+//     console.log(value + ' new sentences')
+// }
 
 
+// const ob3 = {                                              /// цикл перебора for in в массиве
+//     name: 'Y',
+//     surname: 'B',
+//     car: 'X',
+//     age: 19,
+// }
+// // for(let key in ob3) {
+// //     console.log(ob3[key])
+// // }
 
 
+// try {                                                       /// обработка ошибки (не заданна переменная)
+//     console.log(newVar);
+//          let newVAr = 'new var';
+//      } catch (err) {
+//          console.error(`New error - ${err} !!!`)
+//      }
+
+// try {                                                       /// Сами генерерируем ошибку
+//     let a = 10 / 0;
+//     if(a === Infinity) {
+//         throw new Error(`You can't divide by 0`)
+//     }
+// } catch(err) {
+//     console.error(`There is a new ERROR - ${err} !!!`)
+// } finally {
+//     console.log(`I'll be always with you!!!`)
+//}
+
+
+// const date = new Date();
+// console.log(date);
+// console.log(date.getDate());
+// console.log(date.getDay());
+// console.log(date.getFullYear());
+// console.log(date.getMonth());
+// console.log(Date.now());
+// console.log('CONTINUE');
 
 
 
