@@ -22,3 +22,4 @@ let ssa = [{name: "a", width: "10", len:"12"},                                  
 //     })
 // })
 // console.log(newArr);
+///
