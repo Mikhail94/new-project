@@ -19,3 +19,4 @@ console.log(newStr3.replace(reg3, 'fff'));
 const reg4 = /l{1,3}/;
 newStr4 = 'Heddlol ddfd ll l';
 console.log(newStr4.replace(reg4, 'fff'));
+///

@@ -36,3 +36,4 @@ console.log(baby);
 
 baby.move()
 Baby.cry();
+///

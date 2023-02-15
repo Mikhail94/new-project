@@ -11,3 +11,4 @@ const obj = {
 // console.log(obj.name);
 obj.setName('New Name');                        //// обращаемся на смену имени через функцию SET
 console.log(obj.getName());
+///
