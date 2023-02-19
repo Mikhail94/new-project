@@ -29,11 +29,11 @@ class Baby extends Girl {
     }
  }
 
-const girl = new Girl('green', 'white')
-console.log(girl);
-const baby = new Baby('blue', 'red', 6)
-console.log(baby);
+// const girl = new Girl('green', 'white')
+// console.log(girl);
+// const baby = new Baby('blue', 'red', 6)                      /// создаем экземпрляр класса
+//  console.log(baby);
 
-baby.move()
-Baby.cry();
+// baby.move()
+//Baby.cry();
 ///

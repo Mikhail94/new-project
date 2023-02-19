@@ -254,9 +254,16 @@
 // console.log(Date.now());
 // console.log('CONTINUE');
 
-
-///
-
+//////////////////////////// тернарный оператор //////////////////////////////////////
+//let age = 17;
+// if(age > 18) {
+//     console.log('Hello')
+// } else {
+//     console.log('GO away')
+// }
+//////////////////////// то же самое//////////////
+// let result = age > 18 ? 'Hello' : 'Go away';     //// тернарный оператор 
+// console.log(result)
 
 
 
