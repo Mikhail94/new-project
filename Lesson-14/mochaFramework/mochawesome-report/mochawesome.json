@@ -5,19 +5,279 @@
     "passes": 2,
     "pending": 0,
     "failures": 3,
-    "start": "2023-02-26T16:30:40.052Z",
-    "end": "2023-02-26T16:30:40.630Z",
-    "duration": 578,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "start": "2023-03-05T12:39:15.598Z",
+    "end": "2023-03-05T12:39:16.278Z",
+    "duration": 680,
+    "testsRegistered": 5,
+    "passPercent": 40,
+    "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "27967608-e77d-40d7-80f2-49f6dd30a9a9",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b843092d-c71a-4221-be53-afd9f154e32b",
+          "title": "our first test",
+          "fullFile": "C:\\Users\\Nekl0\\it-academy-\\new-project\\Lesson-14\\mochaFramework\\test\\firstTest.spec.js",
+          "file": "\\test\\firstTest.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"our first test\"",
+              "fullTitle": "our first test \"before all\" hook in \"our first test\"",
+              "timedOut": null,
+              "duration": 5,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "// сначало он сделает какоие-то прекондиции\n        console.log('print before all test')",
+              "err": {},
+              "uuid": "16f88292-21ea-48c3-9a71-2f0b902ddc2d",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"before each\" hook in \"our first test\"",
+              "fullTitle": "our first test \"before each\" hook in \"our first test\"",
+              "timedOut": null,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "// отработает перед каждым тестом\n        console.log('print before Each test')",
+              "err": {},
+              "uuid": "00a76779-a8da-4566-87d9-61b3381cfaf1",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"our first test\"",
+              "fullTitle": "our first test \"after all\" hook in \"our first test\"",
+              "timedOut": null,
+              "duration": 6,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "// отработает в самом конце после всех тестов\n        console.log('print after all test')",
+              "err": {},
+              "uuid": "1880afc0-0442-4ab0-a727-d68097745ae4",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            },
+            {
+              "title": "\"after each\" hook in \"our first test\"",
+              "fullTitle": "our first test \"after each\" hook in \"our first test\"",
+              "timedOut": null,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "// отработает после каждого теста\n        console.log('print after Each test')",
+              "err": {},
+              "uuid": "247cd639-6e75-4ff1-bcc9-18d9a998dd96",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "function should return true true",
+              "fullTitle": "our first test function should return true true",
+              "timedOut": null,
+              "duration": 2,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// здесь лежат тесты. это функция в которой будет лежать тест   \n console.log('first test')\n const functionResult = returnTrue();\n expect (functionResult).to.equal(true)                 // ожидаемый результат",
+              "err": {},
+              "uuid": "0fc23008-0a53-4baf-afd7-c7bf8ee23921",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "function should return true true",
+              "fullTitle": "our first test function should return true true",
+              "timedOut": null,
+              "duration": 5,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// здесь лежат тесты. это функция в которой будет лежать тест   \n console.log('second test')\n const functionResult = returnTrue();\n expect (functionResult).to.equal(false)                 // ожидаемый результат",
+              "err": {
+                "message": "AssertionError: expected true to equal false",
+                "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (test\\firstTest.spec.js:55:36)",
+                "diff": "- true\n+ false\n"
+              },
+              "uuid": "bdd3e5f2-b7d0-420e-9e8c-f72930b74c19",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "function should return true true",
+              "fullTitle": "our first test function should return true true",
+              "timedOut": null,
+              "duration": 19,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// здесь лежат тесты. это функция в которой будет лежать тест   \n console.log('third test')\n const functionResult = returnTrue();\n expect (functionResult).to.equal(true)                 // ожидаемый результат",
+              "err": {},
+              "uuid": "62986377-a555-40bd-aaf0-70b2ae813f95",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0fc23008-0a53-4baf-afd7-c7bf8ee23921",
+            "62986377-a555-40bd-aaf0-70b2ae813f95"
+          ],
+          "failures": [
+            "bdd3e5f2-b7d0-420e-9e8c-f72930b74c19"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 26,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "3f059d79-8f82-48a0-ad14-5308b06bc16b",
+          "title": "our first test",
+          "fullFile": "C:\\Users\\Nekl0\\it-academy-\\new-project\\Lesson-14\\mochaFramework\\test\\firsttest1.spec.js",
+          "file": "\\test\\firsttest1.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "function should return true true",
+              "fullTitle": "our first test function should return true true",
+              "timedOut": null,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// здесь лежат тесты. это функция в которой будет лежать тест   \n const functionResult = returnTrue();\n expect (functionResult).to.equal(false)                 // ожидаемый результат",
+              "err": {
+                "message": "AssertionError: expected true to equal false",
+                "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (test\\firsttest1.spec.js:8:36)\n    at process.processImmediate (node:internal/timers:471:21)",
+                "diff": "- true\n+ false\n"
+              },
+              "uuid": "226f65c8-94c6-4261-8d6b-d211485b21dd",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "226f65c8-94c6-4261-8d6b-d211485b21dd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "b30dab34-d358-4042-8617-60297705332c",
+          "title": "our first test",
+          "fullFile": "C:\\Users\\Nekl0\\it-academy-\\new-project\\Lesson-14\\mochaFramework\\test\\firstTest2.spec.js",
+          "file": "\\test\\firstTest2.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "function should return true true",
+              "fullTitle": "our first test function should return true true",
+              "timedOut": null,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// здесь лежат тесты. это функция в которой будет лежать тест   \n const functionResult = returnTrue();\n expect (functionResult).to.equal(false)                 // ожидаемый результат",
+              "err": {
+                "message": "AssertionError: expected true to equal false",
+                "estack": "AssertionError: expected true to equal false\n    at Context.<anonymous> (test\\firstTest2.spec.js:8:36)\n    at process.processImmediate (node:internal/timers:471:21)",
+                "diff": "- true\n+ false\n"
+              },
+              "uuid": "d13ded16-890c-468e-8bac-1e6ef4238a3f",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d13ded16-890c-468e-8bac-1e6ef4238a3f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
   ],
   "meta": {
     "mocha": {
