@@ -3,112 +3,162 @@
 // самолетов компании по дальности полета. Найти самолет в компании,
 // соответствующий заданному диапазону параметров.
 
-class Planes {                           /// супер класс самолет
-    getСapacity() {                          /// принимает вместимость 
+class Planes {                           
+    getСapacity() {                           
         return this.capacity;
     }
 
-    getName() {                             /// принимает имя
+    getName() {                             
         return this.name;
     }
 
-    setName(name) {                         /// возвращает имя
+    setName(name) {                         
         this.name = name;
     }
 
-    setСapacity(capacity) {                 /// устанавливает вместимость 
+    setСapacity(capacity) {                  
         this.capacity = capacity;
     }
-    getLoadcapacity() {                     /// принимает грузоподъемность
+    getLoadcapacity() {                     
         return this.loadCapacity;
     }
 
-    setLoadcapacity(loadCapacity) {         /// возвращает грузоподъемность
+    setLoadcapacity(loadCapacity) {         
         this.loadCapacity = loadCapacity;
+    }
+
+    getDistance() {                     
+        return this.distance;
+    }
+
+    setDistance(distance) {         
+        this.distance = distance;
     }
 }            
 class Plane1 extends Planes {                  
     constructor() {
         super();
         this.setName('Plane1');
-        this.setСapacity(1)
-        this.setLoadcapacity(9)
+        this.setСapacity(1000)
+        this.setLoadcapacity(1500)
+        this.setDistance(5000)
     }
 }
 class Plane2 extends Planes {             
     constructor() {
         super();
         this.setName('Plane2');
-        this.setLoadcapacity(2)
-        this.setСapacity(8)
+        this.setLoadcapacity(1100)
+        this.setСapacity(1400)
+        this.setDistance(4000)
     }
 }
 class Plane3 extends Planes {              
     constructor() {
         super();
         this.setName('Plane3');
-        this.setLoadcapacity(3)
-        this.setСapacity(7)
+        this.setLoadcapacity(1000)
+        this.setСapacity(1500)
+        this.setDistance(5000)
     }
 }
 class Plane4 extends Planes {              
     constructor() {
         super();
         this.setName('Plane4');
-        this.setLoadcapacity(4)
-        this.setСapacity(5)
+        this.setLoadcapacity(1100)
+        this.setСapacity(1100)
+        this.setDistance(6000)
     }
 }
 class Plane5 extends Planes {             
     constructor() {
         super();
         this.setName('Plane5');
-        this.setLoadcapacity(6)
-        this.setСapacity(5)
+        this.setLoadcapacity(1100)
+        this.setСapacity(900)
+        this.setDistance(5000)
     }
 }
-class Airport extends Planes {             /// компановщик 
+class Airport extends Planes {              
     constructor() {
         super();
         this.planes = [];
     }
 
-    add(plane) {                            /// добавляем запчасти
+    add(plane) {                            
         this.planes.push(plane);
     }
 
-    // getPrice() {                            /// высчитываем стоимость
-    //     return this.parts
-    //         .map(part => part.getPrice())
-    //         .reduce((a, b) => a + b)
-    // }
+    getСapacity() {                            
+        return this.planes
+            .map(plane => plane.getСapacity())
+            .reduce((a, b) => a + b)
+    }
+    getLoadcapacity() {                            
+        return this.planes
+            .map(plane => plane.getLoadcapacity())
+            .reduce((a, b) => a + b)
+    }
+    getDistance() {                                             
+        return this.planes 
+        .sort((a, b) => a.getDistance() - b.getDistance())
+        .map(plane => plane.getName())
+    }
+    getName() {                                             
+        return this.planes  
+       .map(plane => plane.getName())   
+    }
+    getPlanesByParameters(minCapacity, maxCapacity, minLoadCapacity, maxLoadCapacity, minDistance, maxDistance) {
+        return this.planes.filter(plane => 
+            plane.getСapacity() >= minCapacity && plane.getСapacity() <= maxCapacity &&
+            plane.getLoadcapacity() >= minLoadCapacity && plane.getLoadcapacity() <= maxLoadCapacity &&
+            plane.getDistance() >= minDistance && plane.getDistance() <= maxDistance
+        );
+    }    
 }
-// class Airport extends Composite {
-//     constructor() {
-//         super();
-//         this.setName('WV');
-//     }
-// }
-let aircompany = new Airport();                                    /// создаем новую машину 
-aircompany.add(new Plane1());                            /// компануем деталями
-aircompany.add(new Plane2());                                   /// компануем деталями
+ 
+let aircompany = new Airport();                                     
+aircompany.add(new Plane1());                                       
+aircompany.add(new Plane2());                                       
 aircompany.add(new Plane3());
 aircompany.add(new Plane4());
 aircompany.add(new Plane5());
 
-console.log(plane1)
-//console.log(`${plane1.getName()} has Сapacity  ${plane1.setСapacity()} and has Loadcapacity ${plane1.setLoadcapacity()}`)
+console.log(aircompany)                          
+console.log(`has total Сapacity  ${aircompany.getСapacity()} and has total Loadcapacity ${aircompany.getLoadcapacity()}`)
+console.log(`planes in order by distance ${aircompany.getDistance()}`)
+let planesInRange = aircompany.getPlanesByParameters(1000, 1400, 1000, 1500, 4000, 6000);
+console.log(planesInRange);
 
+// let plane1 = new Plane1
+// let plane2 = new Plane2
+// let plane3 = new Plane3
+// let plane4 = new Plane4
+// let plane5 = new Plane5
 
-
-
-
-
-
-
-
-
-
+// function findPlane (capacity, loadCapacity, distance) {        
+//         if (capacity == plane1.capacity && loadCapacity == plane1.loadCapacity && distance == plane1.distance) {
+//            console.log('plane1');
+//         }
+//         else if (capacity == plane2.capacity && loadCapacity == plane2.loadCapacity && distance == plane2.distance) {
+//             console.log('plane2') 
+//         }
+//         else if (capacity == plane3.capacity && loadCapacity == plane3.loadCapacity && distance == plane3.distance) {
+//             console.log('plane3')
+//         }
+//         else if (capacity == plane4.capacity && loadCapacity == plane4.loadCapacity && distance == plane4.distance) {
+//             console.log('plane4') 
+//         }
+//         else if (capacity == plane5.capacity && loadCapacity == plane5.loadCapacity && distance == plane5.distance) {
+//             console.log('plane5') 
+//         }
+//         else {
+//             console.log(`We haven't plane like this`)
+//         }
+//         return this.plane
+//     }       
+//     findPlane(1100, 1100, 6000)
 
 
 
