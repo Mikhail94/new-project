@@ -149,19 +149,7 @@ function findPlane (capacity, loadCapacity, distance) {
         }
         return this.plane
     }       
+
     findPlane(1100, 1100, 6000)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
