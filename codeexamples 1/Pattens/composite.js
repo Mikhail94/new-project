@@ -40,7 +40,7 @@ class Interier extends Parts {              /// запчасть
     }
 }
 
-class TurboEngine extends Parts {
+class TurboEngine extends Parts {           /// запчасть
     constructor() {
         super();
         this.setName('Turbo engine');
@@ -80,10 +80,10 @@ car.add(new Interier());                                /// компануем �
 
 console.log(`${car.getName()} price is ${car.getPrice()}`)
 
-let car1 = new Car();                                   /// создаем новую машину
-car1.add(new Transmission());                           /// компануем деталями
-car1.add(new Cabin());                                  /// компануем деталями
-car1.add(new Interier());                               /// компануем деталями
-car1.add(new TurboEngine());                            /// компануем деталями               
+// let car1 = new Car();                                   /// создаем новую машину
+// car1.add(new Transmission());                           /// компануем деталями
+// car1.add(new Cabin());                                  /// компануем деталями
+// car1.add(new Interier());                               /// компануем деталями
+// car1.add(new TurboEngine());                            /// компануем деталями               
 
-console.log(`${car1.getName()} price is ${car1.getPrice()}`)
+// console.log(`${car1.getName()} price is ${car1.getPrice()}`)

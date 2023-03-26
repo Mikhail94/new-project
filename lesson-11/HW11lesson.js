@@ -108,6 +108,14 @@ class Airport extends Planes {
     getName() {                                             
         return this.planes  
        .map(plane => plane.getName())   
+
+    }
+    getPlanesByParameters(minCapacity, maxCapacity, minLoadCapacity, maxLoadCapacity, minDistance, maxDistance) {
+        return this.planes.filter(plane => 
+            plane.getСapacity() >= minCapacity && plane.getСapacity() <= maxCapacity &&
+            plane.getLoadcapacity() >= minLoadCapacity && plane.getLoadcapacity() <= maxLoadCapacity &&
+            plane.getDistance() >= minDistance && plane.getDistance() <= maxDistance
+        );
     }    
 }
  
@@ -121,6 +129,7 @@ aircompany.add(new Plane5());
 console.log(aircompany)                          
 console.log(`has total Сapacity  ${aircompany.getСapacity()} and has total Loadcapacity ${aircompany.getLoadcapacity()}`)
 console.log(`planes in order by distance ${aircompany.getDistance()}`)
+
 
 let plane1 = new Plane1
 let plane2 = new Plane2
@@ -150,3 +159,40 @@ function findPlane (capacity, loadCapacity, distance) {
         return this.plane
     }       
     findPlane(1100, 1100, 6000)
+
+let planesInRange = aircompany.getPlanesByParameters(1000, 1400, 1000, 1500, 4000, 6000);
+console.log(planesInRange);
+
+// let plane1 = new Plane1
+// let plane2 = new Plane2
+// let plane3 = new Plane3
+// let plane4 = new Plane4
+// let plane5 = new Plane5
+
+// function findPlane (capacity, loadCapacity, distance) {        
+//         if (capacity == plane1.capacity && loadCapacity == plane1.loadCapacity && distance == plane1.distance) {
+//            console.log('plane1');
+//         }
+//         else if (capacity == plane2.capacity && loadCapacity == plane2.loadCapacity && distance == plane2.distance) {
+//             console.log('plane2') 
+//         }
+//         else if (capacity == plane3.capacity && loadCapacity == plane3.loadCapacity && distance == plane3.distance) {
+//             console.log('plane3')
+//         }
+//         else if (capacity == plane4.capacity && loadCapacity == plane4.loadCapacity && distance == plane4.distance) {
+//             console.log('plane4') 
+//         }
+//         else if (capacity == plane5.capacity && loadCapacity == plane5.loadCapacity && distance == plane5.distance) {
+//             console.log('plane5') 
+//         }
+//         else {
+//             console.log(`We haven't plane like this`)
+//         }
+//         return this.plane
+//     }       
+//     findPlane(1100, 1100, 6000)
+
+
+
+
+
