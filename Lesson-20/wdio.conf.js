@@ -59,11 +59,31 @@ exports.config = {
         maxInstances: 5,
         //
         browserName: 'chrome',
-        acceptInsecureCerts: true
+        acceptInsecureCerts: true,
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
+        'goog:chromeOptions': {
+            args: [
+                '--whitelisted-ips=',
+                '--disable-infobars=true', // note this does not remove "Chrome is being controlled by automated test software" notification
+                '--disable-gpu',
+                'window-size=1920,1080',
+                'test-type=browser',
+                'disable-notifications',
+                'incognito',
+                'disable-application-cache',
+                '-disable-extensions', // used to bypass loading of extensions which will be blocked by MMC security policy anyway
+                '--ignore-certificate-errors',
+                'enable-automation',
+                '--disable-dev-shm-usage',
+                '--disable-browser-side-navigation',
+                '--no-sandbox',
+                '--enable-logging',
+                // '--headless'
+            ],
+        }
     }],
     //
     // ===================
@@ -141,7 +161,7 @@ exports.config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js'],
+        require: ['./step-definitions/steps.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)

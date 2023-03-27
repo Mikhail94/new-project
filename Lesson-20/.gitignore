@@ -1,1 +1,7 @@
 node_modules
+build
+allure-results
+screenshots
+download
+allure-report
+.tmp
