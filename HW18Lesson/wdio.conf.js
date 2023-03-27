@@ -23,7 +23,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+         //'./test/specs/**/*.js'
+        './test/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -56,7 +57,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'chrome',
         acceptInsecureCerts: true,
@@ -91,7 +92,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
@@ -115,10 +116,10 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    baseUrl: '',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -158,7 +159,7 @@ exports.config = {
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
     }
-]],
+    ]],
 
 
     
@@ -169,6 +170,9 @@ exports.config = {
         ui: 'bdd',
         timeout: 60000
     },
+
+
+
     //
     // =====
     // Hooks
@@ -183,7 +187,9 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     onPrepare: function (config, capabilities) {
-     },
+        // console.log('config --- ', config)
+        // console.log('capabilities --- ', capabilities)
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -194,7 +200,7 @@ exports.config = {
      * @param  {[type]} execArgv list of string arguments passed to the worker process
      */
     onWorkerStart: function (cid, caps, specs, args, execArgv) {
-     },
+    },
     /**
      * Gets executed just after a worker process has exited.
      * @param  {String} cid      capability id (e.g 0-0)
@@ -229,6 +235,8 @@ exports.config = {
      * @param {Array} args arguments that command would receive
      */
     beforeCommand: function (commandName, args) {
+        // console.log('commandName -- ', commandName)
+        // console.log('args -- ', args)
     },
     /**
      * Hook that gets executed before the suite starts

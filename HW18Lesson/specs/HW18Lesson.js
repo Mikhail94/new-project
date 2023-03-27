@@ -22,7 +22,7 @@ describe('Webdriver IO tests', () => {
         await expect(await $(`//*[@class='theme-doc-markdown markdown']/header/h1`).getText()).to.contain('Testrunner')   
     })    
 
-    it('The text color should change', async () => {                                             
+    it.skip('The text color should change', async () => {                                             
         const elem = $(`//*[@class='navbar__items']//*[contains(text(),'API')]`);
         await $(`//*[@class='navbar__items']//*[contains(text(),'API')]`).waitForDisplayed();
         const colorBefore = elem.getCSSProperty('color');

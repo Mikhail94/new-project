@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "agent-base": "^6.0.2",
+    "allure": "^0.0.0",
     "allure-commandline": "^2.21.0",
     "allure-js-commons": "^2.1.0",
     "ansi-colors": "^4.1.1",
