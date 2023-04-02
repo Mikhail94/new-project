@@ -11,7 +11,7 @@ Given(/^I accept all cookies$/, async () => {                           /// пр
 })
 
 When(/^I input (.*) to field (.*)$/, async function (text, selector) {      /// функция которая будет делать. (.*) сюда вставляется значение из тестфайла .feature 
-    const world = this;
+    const world = this;                                                     /// СОЗДАЕТСЯ КОНТЕКСТ ТЕСТА. В нем можно сохранять данные 
     world.inputText = text;
     console.log('world --- ', world);
     await $(selector).waitForDisplayed();                                   ///ждем селектор
@@ -24,10 +24,30 @@ When(/^I click search button$/, async () => {                               /// 
 })
 
 Then(/^I expect that element (.*) contain text (.*)$/, async function (selector, text) {  /// экспектед, где мы ждем что в локаторе будет определенный текст. передаем эти параметры в функции 
-    const world = this;
+    const world = this;                                                      /// СОЗДАЕТСЯ КОНТЕКСТ ТЕСТА. В нем можно сохранять данные
     console.log('world --- ', world);
     await browser.pause(2000)                                                /// ждем браузер 2 секунды
     await $$(selector)[0].waitForClickable();                                /// ждем пока первый селектор из массива будет кликабельным 
     expect((await $$(selector)[0].getText()).toLowerCase()).to.contain(text) /// ожидаем что в элементе есть текст который мы передаем параметром 
 });
 
+When("I add value {string} to {string}", async function (text, selector) {     /// здесь мы будем вводить значение в селектор
+    await $(selector).waitForDisplayed();                                      /// ждем седектор
+    await $(selector).addValue(text);                                          /// вводим текст в селектор
+})
+
+When("I wait for {string}", async function (seconds) {                         /// функция которая будет ждать заданное количество секунд
+    const pause = seconds * 1000
+    await browser.pause(pause)
+})
+
+When("I switch to frame {int}", async function (frameNumber) {                /// здесь мы будем переключаться на другой фрэйм
+    const frame = frameNumber - 1
+    await browser.switchToFrame(frame)
+})
+
+When("I click {string} {int} element", async function (selector,number) {      /// здесь мы будем говорить по какому элементу з массива будем кликать. 
+    const clickNumber = number - 1;                                            /// переменная где сохраняется наш точный номер элемента
+    await $$(selector)[clickNumber].waitForClickable();                        /// ждем селектор с номером
+    await $$(selector)[clickNumber].click();                                   /// нажимаем на селектор с номером
+})
