@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "settings": {
+        "type": "object",
+        "properties": {
+          "auto_goals": {
+            "type": "integer"
+          },
+          "button_goals": {
+            "type": "integer"
+          },
+          "c_recp": {
+            "type": "string"
+          },
+          "form_goals": {
+            "type": "integer"
+          },
+          "pcs": {
+            "type": "string"
+          },
+          "webvisor": {
+            "type": "object",
+            "properties": {
+              "arch_type": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "forms": {
+                "type": "integer"
+              },
+              "recp": {
+                "type": "string"
+              },
+              "urls": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "arch_type",
+              "date",
+              "forms",
+              "recp",
+              "urls"
+            ]
+          },
+          "dr": {
+            "type": "string"
+          },
+          "sbp": {
+            "type": "object",
+            "properties": {
+              "a": {
+                "type": "string"
+              },
+              "b": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "a",
+              "b"
+            ]
+          },
+          "eu": {
+            "type": "integer"
+          },
+          "hittoken": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "auto_goals",
+          "button_goals",
+          "c_recp",
+          "form_goals",
+          "pcs",
+          "webvisor",
+          "dr",
+          "sbp",
+          "eu",
+          "hittoken"
+        ]
+      },
+      "userData": {
+        "type": "object"
+      }
+    },
+    "required": [
+      "settings",
+      "userData"
+    ]
+  }
