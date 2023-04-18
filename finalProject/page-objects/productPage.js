@@ -14,7 +14,7 @@ class ProductPage {
     }
 
     async putItemToBasket (logInText, passwordText) {      /// функция которая положит товар в корзину. если мы не залогинены
-        await this.logIn.logInCorrect (logInText, passwordText)
+        await this.logIn.logIn (logInText, passwordText)
         await this.page.click(this.mainPage.firstItem)
         await this.page.click(this.putToBasketButton)
         await this.page.waitForSelector(this.topNavigation.basketAmountLocator)
@@ -23,7 +23,7 @@ class ProductPage {
 
 
     async putProductToFavourite (logInText, passwordText) {     /// функция которая положит товар в избранное
-        await this.logIn.logInCorrect (logInText, passwordText)
+        await this.logIn.logIn(logInText, passwordText)
         await this.page.click(this.mainPage.firstItem)
         await this.page.click(this.putToFavouriteButton)
 

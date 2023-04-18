@@ -17,7 +17,8 @@ class FavouritePage {
 
 
 
-async removeProductFromFavourite () {
+async removeProductFromFavourite (logInText, passwordText) {
+    await this.logIn.logIn(logInText, passwordText)
     await this.page.click(this.topNavigation.favouriteAmountLocator);
     await this.page.hover(this.productOnFavouritePage);
     await this.navigateToCordinats (this.productOnFavouritePage)

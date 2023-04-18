@@ -11,19 +11,17 @@ class BasketPage {
         this.itemCheckBox = `(//*[@class = 'i-checkbox i-checkbox_large'])[1]`;     /// чек бокс с выбором товара
         this.deleteItemButton = `//*[contains(text(),'Удалить')]//ancestor::*[@class='i-button i-button_danger i-button_small remove']`;    /// кнопка удаления товара из корзины
         this.yesDeleteItemButton = '.remove-yes';       /// "подтвердить удаление" кнопка
-        this.noItemsInBasketLocator = `.i-textual__plain_arrow`;    /// локатор, о том что нету товаров в корзине 
-        
+        this.noItemsInBasketLocator = `.i-textual__plain_arrow`;    /// локатор, о том что нету товаров в корзине         
 
     }
 
 
     async removeItemFromBasket (logInText, passwordText) {
-        await this.logIn.logInCorrect (logInText, passwordText)
+        await this.logIn.logIn(logInText, passwordText)
         await this.page.click(this.topNavigation.basketButton)
         await this.page.check(this.itemCheckBox)
         await this.page.click(this.deleteItemButton)
-        await this.page.click(this.yesDeleteItemButton)
-        
+        await this.page.click(this.yesDeleteItemButton)      
 
     }
 

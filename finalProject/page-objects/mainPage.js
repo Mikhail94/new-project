@@ -13,15 +13,15 @@ class MainPage {
 
     async catalogDropDown () {                 /// функция которая возвращает определенный локатор из массива
         const catalogDropDownArray = await this.page.$$(`.catalog_menu_show`);
-         const catalogDropDown = catalogDropDownArray[0];
-         return catalogDropDown      
+        const catalogDropDown = catalogDropDownArray[0];
+        return catalogDropDown      
     }
 
     async elementFromDropDown (number) {        /// функция с элементом из дропдауна
         //const elementFromDropDownArray = await this.page.$(`//*[@id="dinamic_menu_home"]/div/ul/li[${number}]/a`);
         const elementFromDropDownArray = await this.page.$(`#dinamic_menu_home > div > ul > li:nth-child(${number}) > a`);   
         return elementFromDropDownArray
-    }
+    } 
 
 
 }

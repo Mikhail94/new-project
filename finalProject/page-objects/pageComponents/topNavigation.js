@@ -1,16 +1,32 @@
  class TopNavigation {
      constructor(page) {
-         this.page = page;    /// пробрасываем страницу на которую пойдем 
+         this.page = page;    /// пробрасываем страницу на которую пойдем        
          this.enterButtonLocator = '.top-panel__userbar__auth'; /// локатор с кнопкой входа
          this.basketButton = '.top-panel__userbar__cart__item';     /// локатор кнопки корзины
          this.basketAmountLocator = `.top-panel__userbar__cart__count`; /// локатор с количеством товаров в корзине
          this.favouriteAmountLocator = `.top-panel__userbar__dlink--slink`; /// локатор с количеством товаров избранном
          this.mainSearchField = `.ui-autocomplete-input`    /// локатор серча
          this.mainSearchDropDown = `//*[@id="ui-id-1"]`    /// локатор с дропдауном из главного серча
+         //this.socialMediaButton = `(//*[@class = 'footer-full__social-link'])[1]` 
         
         }
-        enterButton() {           /// функция которая возвращвет  селектор enterButtonLocator
-    return this.page.waitForSelector(this.enterButtonLocator);
+
+        async socialMediaButton(number) {            //// локатор социальной сети
+            return this.page.$(`(//*[@class = 'footer-full__social-link'])[${number}]`)  
+        }
+
+        async getUrlFromSocialMediaButton (number) {       /// достает урлу из локатора
+            const elemenSocialMedia = await this.socialMediaButton(number)
+            const urlFromSocialMediaButton = await elemenSocialMedia.getAttribute('href');
+            return urlFromSocialMediaButton
+        }
+        async getUrlofTheTab(page) {            /// забираем урлу со страницы 
+            const currentUrl = await page.url();
+            return currentUrl;
+          }
+
+        async enterButton() {           /// функция которая возвращвет  селектор enterButtonLocator
+            return this.page.waitForSelector(this.enterButtonLocator);
         }
 
         async searchItem (searchText) {         /// функция которая осуществляет поиск товара
@@ -18,7 +34,21 @@
             await this.page.click(this.mainSearchDropDown)
         }
 
+        async switchToNextTabAfterClickToSocialNetwork(number) {    /// после нажатия н локатор открывается новая вкладка и мы на нее идем 
+            const [newPage] = await Promise.all([
+                this.page.waitForEvent('popup'), 
+                await this.page.click(`(//*[@class = 'footer-full__social-link'])[${number}]`),
+            ]);
+            return newPage;
+        }
+
+
+
     }
+
+
+
+    
 
 
     module.exports = TopNavigation;      /// экспортируем класс

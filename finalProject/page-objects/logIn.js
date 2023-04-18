@@ -30,14 +30,14 @@ const TopNavigation = require('../page-objects/pageComponents/topNavigation');
         //     return this.passowordField.backgroundColor()
         // }
     
-        async logInCorrect (logInText, passwordText) {       /// функция которая логин верно
-            await this.logIn(logInText, passwordText)
-            await this.page.waitForSelector(this.accountNumber);
-        } 
-        async logInWrong (logInText, passwordText) {        /// функция которая логинит не верно                       
-            await this.logIn(logInText, passwordText)            
-            await this.page.waitForSelector(this.errorPassword)           
-        }
+        // async logInCorrect (logInText, passwordText) {       /// функция которая логин верно     //// не уверен что нужно 
+        //     await this.logIn(logInText, passwordText)
+        //     await this.page.waitForSelector(this.accountNumber);
+        // } 
+        // async logInWrong (logInText, passwordText) {        /// функция которая логинит не верно     //// не уверен что нужно                       
+        //     await this.logIn(logInText, passwordText)            
+        //     await this.page.waitForSelector(this.errorPassword)           
+        // }
  }
  
  module.exports = LogIn;
