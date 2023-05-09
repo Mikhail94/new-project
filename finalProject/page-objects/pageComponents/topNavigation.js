@@ -9,6 +9,7 @@ class TopNavigation {
         this.mainSearchDropDown = `//*[@id="ui-id-1"]`;
         this.writeToUsButton = `//*[@class = 'dark border']`;
         this.promotionOfTheDayButton = `.top-panel__hnav__spec`;
+        this.writeToUsButton = `//*[@class = 'dark border']`;
         }
         async socialMediaButton(number) {    
             return this.page.$(`(//*[@class = 'footer-full__social-link'])[${number}]`)  
