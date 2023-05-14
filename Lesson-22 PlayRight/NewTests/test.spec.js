@@ -11,14 +11,14 @@ test.describe('test EPAM website', async function() {
         header = new Header(page);
     });
 
-    // test('go to test io page1', async ({page}) => {
-    //     await mainPage.navigate('https://www.epam.com/');       /// пробрасываем страницу на которую пойдем                     
-    //     await header.goToPageWithTopNavMenu(0, 'Optimizing for Growth'); /// функция с параметрами из headers файла
-    //     expect(await page.title()).to.equal('Optimizing for Growth Services | EPAM123'); ///  проверяем то что в тайтле есть текст 
-    // });
+    test('go to test io page1', async ({page}) => {
+        await mainPage.navigate('https://www.epam.com/');       /// пробрасываем страницу на которую пойдем                     
+        await header.goToPageWithTopNavMenu(0, 'Optimizing for Growth'); /// функция с параметрами из headers файла
+        expect(await page.title()).to.equal('Optimizing for Growth Services | EPAM123'); ///  проверяем то что в тайтле есть текст 
+    });
 
-    test('go to test io page', async ({page}) => {
+    test('go to test io page', async ({page}) => {              /// в этом тесте сделается скриншот с парамметрами 
         await mainPage.navigate('https://www.epam.com/');       /// пробрасываем страницу на которую пойдем 
-        await page.screenshot({path: './screen/new-screen.png', caret: 'hide', animations: 'disabled', mask: [page.locator('.cta-button-ui.cta-button-ui-23.header__control')]})            /// скриншот с парамметрами 
+        await page.screenshot({path: './screen/new-screen.png', caret: 'hide', animations: 'disabled', mask: [page.locator('.cta-button-ui.cta-button-ui-23.header__control')]})  /// скриншот с парамметрами 
     })
 })

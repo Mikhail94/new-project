@@ -2,11 +2,11 @@ class Header {
     constructor(page) {
         this.page = page;    /// пробрасываем страницу на которую пойдем 
         this.topNavLinks = '.top-navigation__item-link'; /// локатор 
-        this.topNavSubLinks = async (subLinkName) => {
+        this.topNavSubLinks = async (subLinkName) => {                                  /// локатор с переменной
             return `//*[@class='top-navigation__sub-link' and text()="${subLinkName}"]`
         };
         this.breadCrumbLink = async (breadCrumbName) => {
-            return `//*[@class='breadcrumbs__link' and text()="${breadCrumbName}"]`
+            return `//*[@class='breadcrumbs__link' and text()="${breadCrumbName}"]`     /// локатор с переменной
         }
     }
 

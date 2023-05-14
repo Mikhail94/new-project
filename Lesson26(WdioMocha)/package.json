@@ -1,0 +1,20 @@
+{
+  "name": "lesson26(wdiomocha)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js",
+    "test:dev": "wdio run ./wdio.conf.js --test_env=dev",
+    "test:test": "wdio run ./wdio.conf.js --test_env=test",
+    "test:stage": "wdio run ./wdio.conf.js --test_env=stage",
+    "test:prod": "wdio run ./wdio.conf.js --test_env=prod",
+    "test:prod1": "npx cross-env test_env=prod wdio run ./wdio.conf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^8.10.1"
+  }
+}
